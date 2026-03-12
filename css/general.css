@@ -1,0 +1,273 @@
+/*
+  
+--- 01 TYPOGRAPHY SYSTEM
+
+
+- Font size(px) & Border-radius
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font-weight:
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+
+- Line-height: 
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+Large: 1.8
+
+- Letter spacing
+-0.5px
+0.75px
+
+--- 02 COLORS
+
+- Primary: #14161b 
+
+- Tints: 
+#030304
+#d2d2d4
+#e8e9e9
+
+
+
+- Shades: 
+#1c1f26
+#030304
+
+- Accents:
+
+- Grays:
+
+#888
+#767676 ( lighest gray allowed on #fff )
+#6f6f6f ( lightest gray allowed on #fdf2e9 )
+#555
+#333
+
+--- 05 SHADOWS
+
+0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+
+
+
+--- 06 BORDER-RADIUS
+
+Default: 9px
+Medium: 11px
+
+
+--- 07 WHITESPACE
+
+- Spacing system (px) & Padding
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+
+/* ================= ROOT THEME ================= */
+
+:root {
+    --bg-dark: #1c1f26;
+    --bg-panel: #232732;
+    --brinjal: #3a1f2d;
+    --spice-orange: #e86a1e;
+    --turmeric-gold: #f4b400;
+    --cyan-accent: #18c3c8;
+    --text-main: #f5f5f5;
+    --text-muted: #b8bcc8;
+}
+
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* font-size: 10px; */
+    /* 10px / 16px = 0.625 = 62.5% */
+    /* Percentage of user's browser font-size setting */
+    font-size: 62.5%;
+    /* overflow-x: hidden; */
+    /* Does NOT work on Safari and also not on MicroSoft edge */
+    /* scroll-behavior: smooth; */
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'rubix', sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    background-color: var(--bg-dark);
+    color: #b8bcc8;
+    /* Only works if there is nothing absolutely
+  positioned in relation to body */
+    overflow-x: hidden;
+}
+
+
+/* ================= GENERAL REUSABLES ================= */
+
+
+/*******************************/
+
+
+/* GENERAL REUSABLE SECTION */
+
+
+/*******************************/
+
+.container {
+    /* 1140px */
+    max-width: 130rem;
+    padding: 0 2.4rem;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    column-gap: 6.4rem;
+    row-gap: 9.6rem;
+    /* margin-bottom: 9.6rem; */
+}
+
+
+/* .grid:last-child {
+  margin-bottom: 0;
+} */
+
+.grid:not(:last-child) {
+    margin-bottom: 9.6rem;
+}
+
+.grid--2-cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+/* .grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+} */
+
+.grid--center-v {
+    align-items: center;
+}
+
+.heading-primary,
+.heading-secondary {
+    font-weight: 700;
+    /* color: #45260a; */
+    /* color: #343a40; */
+    letter-spacing: -0.5px;
+}
+
+.heading-primary {
+    font-family: 'Cinzel', serif;
+    color: var(--turmeric-gold);
+    font-size: 5.6rem;
+    line-height: 1.05;
+    margin-bottom: 2.4rem;
+}
+
+.heading-secondary {
+    font-family: 'Cinzel', serif;
+    color: var(--text-main);
+    font-size: 3.6rem;
+    line-height: 1.2;
+    margin-bottom: 3.2rem;
+}
+
+.heading-tertiary {
+    font-family: 'Cinzel', serif;
+    color: var(--text-main);
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+}
+
+
+/* .subheading {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 1.6rem;
+} */
+
+.hero-description {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 4.8rem;
+}
+
+.section-description {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-bottom: 3.2rem;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 1.6rem 3.2rem;
+    border-radius: 30px;
+    /* Only necessary for .btn */
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    /* Put transition on origial "state" */
+    /* transition: background-color 0.3s; */
+    transition: all 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+    color: var(--bg-dark);
+    background: linear-gradient(135deg, var(--spice-orange), var(--turmeric-gold));
+}
+
+.btn--full:hover,
+.btn--full:active {
+    background-color: #cf711f;
+    margin-right: 8.2rem;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+    background-color: transparent;
+    color: var(--text-muted);
+    border: 1.6px solid var(--cyan-accent);
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+    background-color: var(--cyan-accent);
+    color: #1c1f26;
+    /* border: 3px solid #fff; */
+    /* Trick to add border inside  */
+}
+
+
+/* Helpers */
+
+.margin-right-sm {
+    margin-right: 1.6rem !important;
+}
